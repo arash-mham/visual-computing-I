@@ -1,0 +1,761 @@
+/*
+EmojiSymbols Font (c)blockworks - Kenichi Kaneko
+http://emojisymbols.com/
+*/
+@font-face {
+    font-family: "EmojiSymbols";
+    src: url('./EmojiSymbols-Regular.woff') format('woff');
+    font-style: normal;
+}
+
+/*****************
+ * Overall layout
+ */
+
+.wrapper {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 50ch;
+    max-width: 125ch;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.title-section {
+    padding-bottom: 2em;
+}
+
+.section {
+    border-top: 3px solid #ccc;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    page-break-inside: auto;
+}
+
+.section:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.title-section+.section:first-child {
+    border-top: 3px solid #ccc;
+}
+
+@media print {
+    /* Firefox hack?
+     * https://stackoverflow.com/q/45414152/646543
+     */
+
+    .row {
+        display: block;
+    }
+
+    .content {
+        display: block;
+    }
+}
+
+/*****************************
+ * Parent link in nav/sidebar
+ */
+
+.parent-link {
+    margin-bottom: 1em;
+    background-color: #3f44c6;
+    border-radius: 0.2em;
+    padding: 0.2em 0.5em;
+    transition: background-color 100ms ease-out;
+    text-align: center;
+}
+
+.parent-link:hover,
+.parent-link:active,
+.parent-link:focus {
+    background-color: #4f5fd6;
+}
+
+.parent-link a {
+    display: block;
+    width: 100%;
+    color: #fff;
+    text-decoration:none;
+}
+
+@media (min-width: 576px) {
+    .parent-link {
+        text-align: left;
+    }
+}
+
+
+/**************
+ * Nav/sidebar
+ */
+
+.nav-sidebar {
+    flex: 0 0 200px;
+}
+
+@media (max-width: 575.98px) {
+    .nav-sidebar {
+        flex: auto;
+    }
+}
+
+.nav-sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav-sidebar .nav-header {
+    font-weight: bold;
+    white-space: nowrap;
+    color: #505050;
+}
+
+.nav-sidebar li a {
+    display: block;
+    width: 100%;
+    padding-left: 0.8em;
+    text-indent: -0.8em;
+    /*border-left: 0.2em solid #fff;
+    transition: border 100ms ease-out;*/
+}
+
+.nav-sidebar li.active a,
+.nav-sidebar li a:hover,
+.nav-sidebar li a:focus,
+.nav-sidebar li a:active {
+    /*border-left: 0.2em solid #aaa;*/
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* .nav-sidebar li.active a:hover,
+.nav-sidebar li.active a:focus,
+.nav-sidebar li.active a:active {
+    border-left: 0.2em solid #000;
+} */
+
+@media print {
+    .nav-sidebar {
+        display: none;
+    }
+}
+
+
+/*************
+ * Typography
+ */
+
+ul {
+    list-style-type: square;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    margin-bottom: 0.5em;
+}
+
+ul ul {
+    list-style-type: circle;
+}
+
+p {
+    margin-bottom: 0.5em;
+    color: #505050;
+}
+
+.announcement_list li {
+    color: #505050;
+}
+h1 {
+    margin-bottom: 0.5em;
+    color: #323232;
+}
+
+h2 {
+    margin-bottom: 0.5em;
+    color: #505050;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    padding-top: 1em;
+    margin-bottom: 0.5em;
+    border-top: 1px solid #ccc;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+.heading {
+    position: relative;
+}
+
+.heading-link {
+    position: absolute;
+    right: 100%;
+    padding-right: 2px;
+    color: inherit;
+    font-family: "EmojiSymbols";
+}
+
+.heading-link:hover {
+    text-decoration: none;
+}
+
+.heading-link::after {
+    content: "\01F517";
+    /*font-size: 0.6em;*/
+    visibility: hidden;
+}
+
+.heading:hover>.heading-link:after {
+    visibility: visible;
+}
+
+@media print {
+    .heading-link {
+        display: none;
+    }
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+h3.hw-main {
+    font-size: 1.1em;
+    font-weight: bolder;
+    margin-top: 0;
+    padding-top: 0;
+    border: none;
+}
+
+h4.hw-part {
+    font-size: inherit;
+}
+
+blockquote {
+    background-color: #dfdfdf;
+    border-left: 0.5em solid black;
+    padding: 1em;
+}
+
+/***********
+ * Diagrams
+ */
+
+.diagram img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/***********************
+ * Office hours summary
+ */
+
+.office-hours-summary ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.office-hours-summary p {
+    margin-bottom: 0.25em;
+}
+
+
+/******************
+ * Calendar widget
+ */
+
+.calendar {
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+/* .calendar .week-title {
+} */
+
+.calendar .week {
+    font-weight: bold;
+    display: none;
+}
+
+
+
+
+.calendar .week ~ .week {
+    display: block;
+}
+
+.calendar .day,
+.calendar .header {
+    padding: .3em 10px;
+    margin-bottom: 0.2em;
+    margin-left: -10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.calendar .header {
+    /* position: relative; */
+    padding-bottom: 0;
+    font-weight: bold;
+    align-items: flex-end;
+}
+
+.calendar .header .references,
+.calendar .header .assignments,
+.calendar .header .readings {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.calendar .day.holiday {
+    background-color: #ecf4d1;
+}
+
+.calendar .day.lab_day {
+    background-color: #f2f7ff;
+}
+
+
+.calendar .day.deadline_day {
+    background-color: #f6d9d3;
+
+}
+
+.deadline {
+    color: rgb(225, 0, 0);
+}
+
+
+.calendar .day.project_day {
+    background-color: #f2f7ff;
+}
+
+.project {
+    font-weight: bold;
+}
+
+
+.calendar .day.lecture_day {
+    background-color: #f2f7ff;
+}
+
+.calendar .day.upcoming {
+    color: #999;
+}
+
+.calendar .day:nth-child(odd).upcoming {
+    background-color: #fcffff;
+}
+
+.calendar .day:nth-child(even).upcoming {
+    background-color: #f2f8fd;
+}
+
+.calendar .date-and-type .date {
+    font-size: 0.85em;
+}
+
+.calendar .date-and-type,
+.calendar .topic,
+.calendar .materials,
+.calendar .references,
+.calendar .assignments,
+.calendar .readings {
+    flex-shrink: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: left;
+}
+
+.calendar .date-and-type {
+    flex-basis: 10ch;
+    flex-grow: 0;
+}
+
+.calendar .topic {
+    flex-basis: 16ch;
+    flex-grow: .8;
+}
+
+/* topic styling for different day types
+.calendar .lecture-day .topic,
+.calendar .midterm-day .topic {
+    font-style: inherit;
+    text-align: left;
+}
+
+.calendar .lecture-day .topic {}
+
+.calendar .section-day .topic {
+    font-style: inherit;
+} */
+
+.calendar ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.calendar li {
+    text-indent: -1.5ch;
+    padding-left: 1.5ch;
+}
+
+.calendar li:not(:last-child) {
+    margin-bottom: 0.2em;
+}
+
+.calendar .materials {
+    flex-basis: 16ch;
+    flex-grow: .8;
+    text-align: left;
+}
+
+.calendar .references,
+.calendar .video,
+.calendar .assignments,
+.calendar .readings {
+    flex-basis: 8ch;
+    flex-grow: .9;
+}
+
+@media (max-width: 767.98px) {
+    .calendar .header {
+        display: none;
+    }
+    .calendar .week {
+        display: block;
+    }
+
+    /* .calendar .date-and-type,
+    .calendar .topic {
+        margin-left: 4px;
+        margin-right: 4px;
+    } */
+
+    .calendar .date,
+    .calendar .type {
+        display: inline;
+        white-space: nowrap;
+    }
+
+    .calendar .date-and-type,
+    .calendar .topic,
+    .calendar .materials,
+    .calendar .references,
+    .calendar .assignments,
+    .calendar .readings {
+        flex-basis: 100%;
+        flex-grow: 1;
+        margin-bottom: 0.2em;
+    }
+
+    .calendar .topic {
+        font-weight: bold;
+    }
+
+    .calendar ul {
+        padding-left: 2ch;
+    }
+
+    .calendar .materials.empty,
+    .calendar .references.empty,
+    .calendar .assignments.empty,
+    .calendar .readings.empty {
+        display: none;
+    }
+
+    .calendar div.materials::before {
+        content: "Materials:";
+        display: block;
+        margin-bottom: 0.2em;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .calendar div.assignments::before {
+        content: "Assignments:";
+        display: block;
+        margin-bottom: 0.2em;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .calendar div.readings::before {
+        content: "Readings:";
+        display: block;
+        margin-bottom: 0.2em;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+}
+
+a.styled-url {
+    padding: 0 0.2rem;
+    border-style: solid;
+    border-width: 0.1rem;
+    margin-top: 0.2rem;
+    margin-right: 0.2rem;
+    font-weight: normal;
+}
+
+a.styled-url:hover {
+    color: white;
+    background-color: inherit;
+    text-decoration: none;
+}
+
+a.blue {
+    border-color: #2689FF;
+    color: #2689FF;
+}
+
+a.blue:hover {
+    background-color: #2689FF;
+}
+
+a.green {
+    border-color: var(--teal);
+    color: var(--teal);
+}
+
+a.green:hover {
+    background-color: var(--teal);
+}
+
+a.purple {
+    border-color: #5A428C;
+    color: #5A428C;
+}
+
+a.purple:hover {
+    background-color: #5A428C;
+}
+
+a.yellow {
+    border-color: #E1AD01;
+    color: #E1AD01;
+}
+
+a.yellow:hover {
+    background-color: #E1AD01;
+}
+
+a.red {
+    border-color: #FF6347;
+    color: #FF6347;
+}
+
+a.red:hover {
+    background-color: #FF6347;
+}
+
+a.gray {
+    border-color: #5C6D70;
+    color: #5C6D70;
+}
+
+a.gray:hover {
+    background-color: #5C6D70;
+}
+
+a.brown {
+    border-color: #964b00;
+    color: #964b00;
+}
+
+a.brown:hover {
+    background-color: #964b00;
+}
+
+span {
+  display: inline-block;
+  width: 28px;
+}
+
+/* enable for inline materials
+.calendar .materials ul,
+.calendar .materials li {
+    display: inline;
+}
+
+.calendar .materials li {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+*/
+
+/********************
+ * Staff list widget
+ */
+
+
+.course-staff .staff-member {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.course-staff .staff-member:last-of-type {
+    border-bottom: 0;
+}
+
+.course-staff .profile-pic img {
+    width: 100%;
+    height: auto;
+}
+
+.course-staff ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.course-staff .name {
+    font-weight: bold;
+}
+
+/*****************************************
+ * Checkbox lists (for completion status)
+ */
+.checkboxes {
+    list-style-type: none;
+    list-style-position: outside;
+    padding-left: 1em;
+}
+
+.checkboxes input {
+    margin-right: 0.3em;
+}
+
+/*************
+ * Flourishes
+ */
+
+.todo {
+    color: red;
+    font-weight: bold;
+}
+
+/*******************
+ * Expandable cards
+ */
+
+.block {
+    margin-bottom: 1em;
+}
+
+.block .card-header h4 {
+    display: inline;
+    color: white;
+}
+
+.block .card-header:focus,
+.block .card-header:hover {
+    cursor: pointer;
+}
+
+/*****************************
+ * Expandable cards: warnings
+ */
+
+.block.warning .card-header {
+    background-color: #ef4f4a;
+}
+
+.block.warning .card-header:focus,
+.block.warning .card-header:hover {
+    background-color: #ed8380;
+}
+
+
+.block.warning .card-body {
+    background-color: #ffc6c4;
+}
+
+/*************************************************
+ * Expandable cards: background info and examples
+ */
+
+.block.background .card-header {
+    background-color: #4a4def;
+}
+
+.block.example .card-header {
+    background-color: #e8843e;
+}
+
+.block.background .card-header:focus,
+.block.background .card-header:hover {
+    background-color: #8080ed;
+}
+
+.block.example .card-header:focus,
+.block.example .card-header:hover {
+    background-color: #edad80;
+}
+
+
+.block.background .card-body {
+    background-color: #c4d6ff;
+}
+
+.block.example .card-body {
+    background-color: #ffe7d6;
+}
+
+/********************
+ * Definition blocks
+ */
+
+.definition {
+    border: 3px solid #0BAA00;
+    border-radius: 2px;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background-color: #eef9ed;
+}
+
+.definition .term {
+    font-weight: bold;
+}
+
+.definition .term:before {
+    content: "Definition: ";
+    font-style: italic;
+    margin-right: 0.75em;
+}
+
+.definition .p:last-child {
+    margin-bottom: 0em;
+}
+
+
+/*************************
+ * MathJax-related config
+ */
+
+.mathjax-definition-space {
+    display: none;
+}
+
+.properties li {
+    margin-bottom: 1.5em;
+}
