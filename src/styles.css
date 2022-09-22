@@ -534,30 +534,30 @@ a.blue:hover {
 }
 
 a.green {
-    border-color: var(--teal);
-    color: var(--teal);
+    border-color: #00B478;
+    color: #00B478;
 }
 
 a.green:hover {
-    background-color: var(--teal);
+    background-color: #00B478;
 }
 
 a.purple {
-    border-color: #5A428C;
-    color: #5A428C;
+    border-color: #76D6FF;
+    color: #76D6FF;
 }
 
 a.purple:hover {
-    background-color: #5A428C;
+    background-color: #76D6FF;
 }
 
 a.yellow {
-    border-color: #E1AD01;
-    color: #E1AD01;
+    border-color: #E765F8;
+    color: #E765F8;
 }
 
 a.yellow:hover {
-    background-color: #E1AD01;
+    background-color: #E765F8;
 }
 
 a.red {
