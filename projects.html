@@ -1,0 +1,91 @@
+<html lang="" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>CMPT732: Practices in visual computing 1, Fall 2022</title>
+    <base href=".">
+    <link rel="stylesheet" href="./src/bootstrap-4.0.0-beta.2.min.css">
+    <link rel="stylesheet" href="./src/styles.css" type="text/css">
+    <script src="./src/ded873da0c.js"></script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1076.0" data-gr-ext-installed="">
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="title-section">
+                </br>
+                <h2>CMPT732: Practices in visual computing 1, Fall 2022</h2>
+            </div>
+            <div class="row">
+                <nav class="nav-sidebar col">
+                    <ul class="row">
+                        <li class="nav-section col-4 col-sm-12">
+                            <span class="nav-header">Links and references</span>
+                            <ul>
+                                <li class="">
+                                    <a href="index.html"> Schedule </a>
+                                </li>
+                                <li class="">
+                                    <a href="staff.html"> Staff </a>
+                                </li>
+                                <li class="">
+                                    <a href="projects.html"> Projects </a>
+                                </li>
+                                <li class="">
+                                    <a href="https://canvas.sfu.ca/courses/73633"> Canvas </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="content col">
+                    <h2>Projects</h2>
+                    <br>
+                    <a href="https://github.com/arash-mham/visual-computing-I/raw/main/projects/pro_1.pdf">Project #1: Bridge the Domain-Gap: Facial Landmarks with Fake-it Dataset</a>
+                    <br>
+                    <a href="https://github.com/arash-mham/visual-computing-I/raw/main/projects/pro_2.pdf">Project #2: NVIDIA Omniverse Digital Twin</a>
+                    <br>
+                    <a href="https://github.com/arash-mham/visual-computing-I/raw/main/projects/pro_3.pdf">Project #3: Super-Resolution Diffusion Models for Faces</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./src/jquery-3.1.1.slim.min.js"></script>
+    <script src="./src/bootstrap-4.0.0-beta.2.bundle.min.js"></script>
+    <script>
+        mendeleyWebImporter = {
+            downloadPdfs(e, t) {
+                return this._call('downloadPdfs', [e, t]);
+            },
+            open() {
+                return this._call('open', []);
+            },
+            setLoginToken(e) {
+                return this._call('setLoginToken', [e]);
+            },
+            _call(methodName, methodArgs) {
+                const id = Math.random();
+                window.postMessage({
+                    id,
+                    token: '0.02926746940322089',
+                    methodName,
+                    methodArgs
+                }, 'http://web.stanford.edu');
+                return new Promise(resolve => {
+                    const listener = window.addEventListener('message', event => {
+                        const data = event.data;
+                        if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+                        window.removeEventListener('message', listener);
+                        resolve(data.result);
+                    });
+                });
+            }
+        };
+    </script>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
